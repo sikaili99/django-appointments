@@ -1,16 +1,13 @@
-from django.urls import path,include
-from . import views
+from rest_framework_simplejwt.views import TokenRefreshView
+from accounts.views import (
+    LoginView, ListAccountsView, LogoutView, RegisterView,)
+from django.urls import path
+
 
 urlpatterns = [
-    path('reset/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
-    path('password_reset/',views.password_reset),
-    path('passwordChanged/',views.pass_changed_success,name='changed' ),
-    path('login/', views.manage),
-    path('signup/',views.patient_signup),
-    path('logout/',views.logout_request),
-    path('check_username/',views.check_username),
-    path('confirmAccount/<uuid:id>',views.confirmAccount),
-    path('',include('hospital.urls')),
-    path('',include('doctor.urls')),
-    path('',include('patient.urls')),
+    path('api/token/', LoginView.as_view()),
+    path('api/token/refresh/', TokenRefreshView.as_view()),
+    path('api/users/', ListAccountsView.as_view()),
+    path('api/register/', RegisterView.as_view()),
+    path('api/logout/', LogoutView.as_view()),
 ]
