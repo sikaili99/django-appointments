@@ -1,7 +1,5 @@
 
 
-
-
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import permissions
@@ -24,7 +22,9 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('', schema_view.with_ui('swagger',
-            cache_timeout=0), name='schema-swagger-ui'),
+                                 cache_timeout=0), name='schema-swagger-ui'),
+    path('api/password_reset/',
+         include('django_rest_passwordreset.urls'),name='password_reset'),
     path('auth/v1/', include('accounts.urls')),
     path('admin/', admin.site.urls),
 ]

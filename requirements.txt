@@ -1,4 +1,5 @@
 asgiref==3.5.2
+autopep8==1.6.0
 backports.zoneinfo==0.2.1
 certifi==2022.6.15
 charset-normalizer==2.1.0
@@ -9,6 +10,7 @@ django-cors-headers==3.13.0
 django-crispy-forms==1.9.2
 django-dotenv==1.4.2
 django-render-block==0.9.1
+django-rest-passwordreset==1.2.1
 django-templated-email==3.0.0
 django-upgrade==1.7.0
 djangorestframework==3.13.1
@@ -20,6 +22,7 @@ itypes==1.2.0
 Jinja2==3.1.2
 MarkupSafe==2.1.1
 packaging==21.3
+pycodestyle==2.8.0
 PyJWT==2.4.0
 pyparsing==3.0.9
 pytz==2022.1
@@ -28,6 +31,7 @@ ruamel.yaml==0.17.21
 ruamel.yaml.clib==0.2.6
 sqlparse==0.3.1
 tokenize-rt==4.2.1
+toml==0.10.2
 uritemplate==4.1.1
 urllib3==1.26.10
 whitenoise==6.2.0
